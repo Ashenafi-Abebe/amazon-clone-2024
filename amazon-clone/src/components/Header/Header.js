@@ -7,8 +7,10 @@ import { DataContext } from "../DataProvider/DataProvider";
 import classes from "./Header.module.css";
 import SecondHeader from "./SecondHeader";
 
+import { auth } from "../../Utility/firebase";
+
 function Header() {
-  const [{ basket }, dispatch] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
   const totalItem = basket?.reduce((amount, item) => item.amount + amount, 0);
 
   return (
@@ -24,14 +26,17 @@ function Header() {
           </Link>
         </div>
         <div className={classes.delivery_section}>
-          <span>
-            <p className={classes.delivery_p}>Delivery to</p>
-            <SlLocationPin aria-label="Location Pin Icon" />
-            USA
-          </span>
+          <Link to="/">
+            {" "}
+            <span>
+              <p className={classes.delivery_p}>Delivery to</p>
+              <SlLocationPin aria-label="Location Pin Icon" />
+              USA
+            </span>
+          </Link>
         </div>
 
-        <div className={classes.AllSection_OuterWrapper}>
+        <div className={classes.All_Section_OuterWrapper}>
           <div className={classes.all_section}>
             <select name="" id="">
               <option value="ALL">ALL</option>
@@ -70,9 +75,20 @@ function Header() {
 
         <div className={classes.account_wrapper}>
           <div className={classes.account_link}>
-            <Link to="/">
-              <p>Hello, sign in</p>
-              <span>Account & Lists</span>
+            <Link to={!user && "/auth"}>
+              {user ? (
+                <>
+                  <p>Hello {user?.email?.split("@")[0]}</p>
+                  <span onClick={() => (user ? auth.signOut() : null)}>
+                    Sign Out
+                  </span>
+                </>
+              ) : (
+                <>
+                  <p>Hello, Sign In</p>
+                  <span>Account & Lists</span>
+                </>
+              )}
             </Link>
           </div>
 

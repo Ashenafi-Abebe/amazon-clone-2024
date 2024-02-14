@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: "inherit", sans-serif;
@@ -65,19 +66,18 @@ img {
   border: 1px solid white;
 }
 
-.AllSection_OuterWrapper {
+.All_Section_OuterWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: 60%; */
   margin-left: 10px;
   flex: 1px;
   border-radius: 5px;
 }
-.AllSection_OuterWrapper:focus {
-  outline: none;
+.All_Section_OuterWrapper:focus {
+  /* outline: none; */
 }
-.AllSection_OuterWrapper:focus-within {
+.All_Section_OuterWrapper:focus-within {
   border: 2px solid #e39127;
 }
 .searchbar_wrapper {
@@ -243,16 +243,18 @@ select {
   display: flex;
   cursor: pointer;
   margin-top: 15px;
-  padding-bottom: 3px;
+  padding-bottom: 10px;
 }
 
 .cart_icon {
   position: absolute;
+  padding-top: 6px;
   color: #fff;
 }
 
 .ziro span {
   margin-left: 15px;
+
   font-weight: bolder;
   position: absolute;
   color: orange;
@@ -271,10 +273,9 @@ select {
 }
 .cart_p {
   margin-left: 40px;
-  margin-top: 8px;
+  margin-top: 15px;
   text-decoration: none;
 }
-
 .cart_wrapper:hover {
   border: 1px solid white;
 }
