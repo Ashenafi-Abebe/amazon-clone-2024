@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { SlLocationPin } from "react-icons/sl";
-import { AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { BiCart } from "react-icons/bi";
 import { DataContext } from "../DataProvider/DataProvider";
 import classes from "./Header.module.css";
 import SecondHeader from "./SecondHeader";
+import { BsSearch } from "react-icons/bs";
 
 import { auth } from "../../Utility/firebase";
 
@@ -38,24 +38,12 @@ function Header() {
           </Link>
         </div>
 
-        <div className={classes.All_Section_OuterWrapper}>
-          <div className={classes.all_section}>
-            <select name="" id="">
-              <option value="ALL">ALL</option>
-            </select>
-          </div>
-          {/* Search bar */}
-          <div className={classes.searchbar_wrapper}>
-            <input
-              type="text"
-              placeholder="Search Amazon"
-              className={classes.search_input}
-            />
-          </div>
-          <div className={classes.Search_Icon}>
-            {" "}
-            <AiOutlineSearch aria-label="Search Icon" size={32} />
-          </div>
+        <div className={classes.search}>
+          <select name="" id="">
+            <option value="">All</option>
+          </select>
+          <input type="text" placeholder="Search Amazon" />
+          <BsSearch size={38} />
         </div>
 
         <div className={classes.flag_and_En_wrapper}>

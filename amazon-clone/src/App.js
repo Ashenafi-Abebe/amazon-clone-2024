@@ -1,9 +1,11 @@
 import { useContext, useEffect } from "react";
 import "./App.css";
+import Landing from "./pages/Landing/Landing";
 import Routing from "./Router";
+import { DataContext } from "./components/DataProvider/DataProvider";
 import { Type } from "./Utility/action.type";
 import { auth } from "./Utility/firebase";
-import { DataContext } from "./components/DataProvider/DataProvider";
+
 function App() {
   const [{ user }, dispatch] = useContext(DataContext);
 
@@ -23,7 +25,6 @@ function App() {
       }
     });
   }, []);
-
   return (
     <div>
       <Routing />

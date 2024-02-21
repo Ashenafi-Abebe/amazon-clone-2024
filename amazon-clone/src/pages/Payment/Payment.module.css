@@ -19,7 +19,7 @@
 }
 
 .flex img {
-  width: 80px !important;
+  max-width: 80px !important;
 }
 
 .flex div {
@@ -31,7 +31,7 @@
   width: 100%;
 }
 
-.payment_detailes button {
+.payment_price button {
   margin-top: 15px;
   width: 100%;
   border: none;
@@ -41,9 +41,9 @@
   cursor: pointer;
 }
 
-/* .payment_detailes button:hover {
-  background-color: var(--primery-color);
-} */
+.payment__price button:hover {
+  background-color: var(--primary-shade);
+}
 
 .payment_price {
   padding: 20px;
