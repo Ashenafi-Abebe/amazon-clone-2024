@@ -7,7 +7,9 @@ import { Type } from "./Utility/action.type";
 import { auth } from "./Utility/firebase";
 
 function App() {
-  const [{ user }, dispatch] = useContext(DataContext);
+  const [state, dispatch] = useContext(DataContext);
+  // const samo = useContext(DataContext);
+  // console.log(samo);
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -25,6 +27,7 @@ function App() {
       }
     });
   }, []);
+
   return (
     <div>
       <Routing />

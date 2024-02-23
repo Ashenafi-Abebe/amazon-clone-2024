@@ -2,8 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 import LayOut from "../../components/LayOut/LayOut";
 import classes from "./Orders.module.css";
 import { db } from "../../Utility/firebase";
-import ProductCard from "../../components/Products/ProductCard";
 import { DataContext } from "../../components/DataProvider/DataProvider";
+import ProductCard from "../../components/Products/ProductCard";
+
 function Orders() {
   const [{ user }, dispatch] = useContext(DataContext);
   const [orders, setOrders] = useState([]);
@@ -24,7 +25,7 @@ function Orders() {
           );
         });
     } else {
-      setOrders([user]);
+      setOrders([]);
     }
   }, []);
 

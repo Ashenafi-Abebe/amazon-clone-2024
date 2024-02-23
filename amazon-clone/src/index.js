@@ -4,7 +4,9 @@ import "./index.css";
 import App from "./App";
 import { DataProvider } from "./components/DataProvider/DataProvider";
 import { reducer, initialState } from "./Utility/reducer";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <>
     <DataProvider reducer={reducer} initialState={initialState}>
@@ -12,5 +14,3 @@ root.render(
     </DataProvider>
   </>
 );
-
-App();

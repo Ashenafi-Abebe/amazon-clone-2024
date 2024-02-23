@@ -21,7 +21,7 @@ function Header() {
         <div className={classes.logo_section}>
           <Link to="/">
             <img
-              className={classes.logo_image}
+              className={`${classes.logo_image} span`}
               src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
               alt="Amazon logo"
             />
@@ -31,7 +31,7 @@ function Header() {
           <Link to="/">
             {" "}
             <span>
-              <p className={classes.delivery_p}>Delivery to</p>
+              <p className={`${classes.delivery_p} span`}>Delivery to</p>
               <SlLocationPin aria-label="Location Pin Icon" />
               USA
             </span>
@@ -69,14 +69,17 @@ function Header() {
               {user ? (
                 <>
                   <p>Hello {user?.email?.split("@")[0]}</p>
-                  <span onClick={() => (user ? auth.signOut() : null)}>
+                  <span
+                    className="span"
+                    onClick={() => (user ? auth.signOut() : null)}
+                  >
                     Sign Out
                   </span>
                 </>
               ) : (
                 <>
                   <p>Hello, Sign In</p>
-                  <span>Account & Lists</span>
+                  <span className="span">Account & Lists</span>
                 </>
               )}
             </Link>
@@ -85,7 +88,7 @@ function Header() {
           <div className={classes.return_wrapper}>
             <Link to="/orders">
               <p>Returns</p>
-              <span>& Orders</span>
+              <span className="span">& Orders</span>
             </Link>
           </div>
 
@@ -93,7 +96,7 @@ function Header() {
             <Link to="/cart">
               <div className={classes.ziro}>
                 {" "}
-                <span>{totalItem}</span>
+                <span className="span">{totalItem}</span>
               </div>
 
               <div className={classes.cart_icon}>

@@ -66,6 +66,11 @@ img {
   border: 1px solid white;
 }
 
+.delivery_section span,
+p {
+  color: #fff;
+}
+
 .search {
   display: flex;
   align-items: center;
@@ -164,13 +169,18 @@ img {
 }
 
 .account_link option,
-span {
+.span {
   color: white;
   background-color: #131921;
 }
 
 .account_link a {
   text-decoration: none;
+}
+
+.account_link span,
+p {
+  color: white;
 }
 
 .account_options,
