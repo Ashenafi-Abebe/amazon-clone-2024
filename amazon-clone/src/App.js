@@ -1,16 +1,16 @@
 import { useContext, useEffect } from "react";
 import "./App.css";
-import Landing from "./pages/Landing/Landing";
+// import Landing from "./pages/Landing/Landing";
 import Routing from "./Router";
 import { DataContext } from "./components/DataProvider/DataProvider";
 import { Type } from "./Utility/action.type";
 import { auth } from "./Utility/firebase";
 
 function App() {
-  const [state, dispatch] = useContext(DataContext);
+  // const [state, dispatch] = useContext(DataContext);
   // const samo = useContext(DataContext);
   // console.log(samo);
-
+  const [, dispatch] = useContext(DataContext);
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
