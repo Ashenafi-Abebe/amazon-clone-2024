@@ -6,7 +6,7 @@ dotenv.config();
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const app = express();
-// setGlobalOptions({ maxInstances: 10 });
+setGlobalOptions({ maxInstances: 10 });
 // //  HHHHHHHHH
 app.use(cors({ origin: true }));
 
