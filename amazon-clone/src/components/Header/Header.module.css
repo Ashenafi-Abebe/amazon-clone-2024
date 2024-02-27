@@ -276,8 +276,13 @@ a {
   }
 }
 
-.language {
+.search select,
+option {
   display: none;
 }
 
+.En_wrapper select,
+option {
+  display: none;
+}
 /* THE LOWER HEADER STARTING HERE */
