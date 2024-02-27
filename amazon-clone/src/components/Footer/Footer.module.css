@@ -6,6 +6,7 @@
   height: 62vh;
   border-bottom: 1px solid hwb(0 27% 73%);
   font-family: "Amazon Ember", Arial, sans-serif;
+  position: sticky;
 }
 
 .outer_wrapper {
